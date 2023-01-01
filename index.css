@@ -1,0 +1,248 @@
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/*
+    2. Remove default margin
+  */
+* {
+  margin: 0;
+}
+/*
+    3. Allow percentage-based heights in the application
+  */
+html,
+body {
+  height: 100%;
+}
+/*
+    Typographic tweaks!
+    4. Add accessible line-height
+    5. Improve text rendering
+  */
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+/*
+    6. Improve media defaults
+  */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+/*
+    7. Remove built-in form typography styles
+  */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+/*
+    8. Avoid text overflows
+  */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+/*
+    9. Create a root stacking context
+  */
+#root,
+#__next {
+  isolation: isolate;
+}
+
+/* ------------------------------------------------------------------- */
+
+body {
+  background-color: rgb(12, 18, 44);
+  color: rgb(255, 255, 255);
+  font-family: "Raleway", sans-serif;
+}
+
+main,
+.row {
+  min-height: 100vh;
+}
+
+main {
+  background-image: url(./images/bg-desktop.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: bottom;
+}
+
+.icon-col {
+  background-color: rgb(29, 44, 103);
+  border-radius: 0.8rem 6rem 0.8rem 0.8rem;
+}
+
+.mini-icons img {
+  background-color: rgb(12, 18, 44);
+  border-radius: 0.8rem;
+}
+
+.data-usage-col {
+  background-color: rgb(29, 44, 103);
+  border-radius: 0.8rem;
+  position: relative;
+  height: fit-content;
+}
+
+.data-usage-col p {
+  color: rgb(221, 219, 255);
+}
+
+.data-ms {
+  color: rgb(255, 255, 255);
+  font-weight: 700;
+}
+
+.data-value p {
+  color: rgb(255, 255, 255);
+}
+
+.left-data {
+  background-color: #fff;
+  color: rgb(12, 18, 44);
+  width: fit-content;
+  border-radius: 0.8rem 0.8rem 0 0.8rem;
+}
+
+.left-data p {
+  color: rgb(132, 135, 148);
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.left-data h1 {
+  font-weight: 700;
+}
+
+.progress {
+  background-color: rgb(12, 18, 44);
+  border-radius: 100px;
+  padding: 4px;
+  height: 26px;
+}
+
+.progress-bar {
+  width: 82%;
+  background-image: linear-gradient(
+    to right,
+    rgb(255, 163, 153),
+    rgb(255, 77, 151)
+  );
+  border-radius: 100px;
+  position: relative;
+}
+
+.circle {
+  background-color: #ffffff;
+  width: 0.8rem;
+  height: 0.8rem;
+  margin: 0 4px;
+  border-radius: 100px;
+  position: absolute;
+  right: 0;
+}
+
+@media screen and (min-width: 768px) {
+  .icon-col {
+    margin-right: 1.5rem !important;
+  }
+
+  .data-usage-col {
+    margin-left: 1.5rem !important;
+  }
+
+  .left-data {
+    position: absolute;
+    top: -22%;
+    right: 9%;
+  }
+
+  .left-data::after {
+    content: " ";
+    position: absolute;
+    right: 0;
+    bottom: -21px;
+    border-top: 22px solid #fff;
+    border-left: 15px solid transparent;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  main {
+    background-image: url(./images/bg-mobile.png);
+    background-size: cover;
+    background-position: initial;
+  }
+
+  .left-data {
+    position: absolute;
+    bottom: -10%;
+    right: 25%;
+    border-radius: 0.8rem;
+  }
+
+  .icon-col {
+    margin-bottom: 1rem !important;
+  }
+  .data-usage-col {
+    margin-top: 1rem !important;
+  }
+
+  .data-message {
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 405px) {
+  .data-message {
+    font-size: 12px;
+    text-align: center;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 992px) {
+  .mini-icons img {
+    padding: 0.5rem !important;
+    margin: 0 0.3rem !important;
+  }
+}
+
+/* Background Query */
+@media screen and (min-width: 1718px) and (min-width: 1920px) {
+  main {
+    background-position: 0 140%;
+  }
+}
+
+@media screen and (min-width: 1922px) and (max-width: 2225px) {
+  main {
+    background-position: 0 180%;
+  }
+}
+
+@media screen and (min-width: 2225px) {
+  main {
+    background-position: 0 180%;
+  }
+}
